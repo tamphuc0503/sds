@@ -1,0 +1,40 @@
+// // For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// // README at: https://github.com/devcontainers/templates/tree/main/src/python
+// {
+// 	"name": "Python 3",
+// 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+// 	//"image": "mcr.microsoft.com/devcontainers/python:0-3.8",
+// 	"image": "docker.io/aprilsea/sdsai-python:0-3.9",
+// 	"postCreateCommand": "python3 -m venv venv && source ./venv/bin/activate && pip3 install -r requirements.txt"	
+// }
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.106.0/containers/docker-existing-docker-compose
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+	"name": "sds-django",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "sds-django",
+	"workspaceFolder": "/app",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "bash",
+						"icon": "terminal-bash"
+					}
+				}
+			},
+			"extensions": [
+				"donjayamanne.python-extension-pack",
+				"littlefoxteam.vscode-python-test-adapter",
+				"humao.rest-client",
+				"postman.postman-for-vscode",
+				"njpwerner.autodocstring",
+				"ms-python.black-formatter"
+			]
+		}
+	},
+	"postCreateCommand": "python3 -m venv venv && source ./venv/bin/activate && pip3 install -r requirements.txt"
+}
