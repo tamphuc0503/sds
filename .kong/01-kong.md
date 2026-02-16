@@ -207,3 +207,16 @@ Git → CI/CD → kong.yaml → Kong reload TODO (make example of this one)
 - Handles 100k–1M+ RPS
 
 ## 🧠 Kong Internal Execution Flow (NGINX + Lua Deep Dive)
+
+
+
+QUESTION:
+what is kong mesh
+- https://developer.konghq.com/mesh/service-mesh/
+what is consumes and upstreams, snis
+what is kong.conf.default file?
+where is plugins directory? 
+- https://developer.konghq.com/plugins/
+how to write plugins
+need to understand nginx.kong.conf (kong_upstream 0.0.0.1
+)
