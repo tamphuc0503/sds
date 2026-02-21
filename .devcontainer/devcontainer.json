@@ -16,6 +16,7 @@
 	"service": "sds-django",
 	"workspaceFolder": "/app",
 	"shutdownAction": "stopCompose",
+	// "forwardPorts": [5432],
 	"customizations": {
 		"vscode": {
 			"settings": {

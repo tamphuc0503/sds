@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "admin",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "program": "manage.py",
+            "args": [
+                "runserver",
+                "0.0.0.0:8000"
+            ],
+            "justMyCode": false
+        },
+         {
+            "name": "import contabo",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "program": "manage.py",
+            "args": [
+                "import_contabo"
+            ],
+            "justMyCode": false
+        },
+    ]
+}

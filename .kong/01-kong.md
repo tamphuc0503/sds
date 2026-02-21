@@ -220,3 +220,7 @@ where is plugins directory?
 how to write plugins
 need to understand nginx.kong.conf (kong_upstream 0.0.0.1
 )
+
+## What is Upstreams:
+- Upstream in kong is equivalent to upstream in Nginx. It will provide a virtual hostname and collection of targets to enable load balancing.
+- A request come to Kong -> Route -> Services -> Upstream -> Target 
