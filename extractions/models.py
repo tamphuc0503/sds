@@ -12,5 +12,8 @@ class SdsFile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table = 'sds_files'
+
     def __str__(self):
         return f"{self.md5} - {self.md5_content}"
