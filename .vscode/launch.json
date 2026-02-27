@@ -16,7 +16,7 @@
             ],
             "justMyCode": false
         },
-         {
+        {
             "name": "import contabo",
             "type": "debugpy",
             "request": "launch",
@@ -24,6 +24,17 @@
             "program": "manage.py",
             "args": [
                 "import_contabo"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "assign_md5_content",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "program": "manage.py",
+            "args": [
+                "assign_md5_content"
             ],
             "justMyCode": false
         },

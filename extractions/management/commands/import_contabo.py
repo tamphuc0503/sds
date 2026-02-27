@@ -20,7 +20,7 @@ class Command(BaseCommand):
         # Loop through all pages until no more token
         page_count = 0
         total_files = 0
-        max_pages = 50000
+        max_pages = 60000
         
         while True:
             page_count += 1
@@ -32,7 +32,7 @@ class Command(BaseCommand):
             
             self.stdout.write(f"Processing batch {page_count}/{max_pages}...")
             
-            files, token = self._list_files_resume_from_token("sds", "s1", token)
+            files, token = self._list_files_resume_from_token("sds", "s3", token)
             
             if not files:
                 self.stdout.write(self.style.WARNING("No more files to process"))
