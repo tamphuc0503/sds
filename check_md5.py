@@ -36,7 +36,7 @@ def check_md5(file_path, expected_md5=None):
     """
     Check the MD5 hash of a specified file.
     
-    Args:
+    Args:   
         file_path: Path to the file
         expected_md5: Optional expected MD5 hash to compare against
         
