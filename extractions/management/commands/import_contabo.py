@@ -56,7 +56,7 @@ class Command(BaseCommand):
         return boto3.client(
             "s3",
             endpoint_url="https://usc1.contabostorage.com",
-            aws_access_key_id="f35256d14c2a22f4648bce44896529d8",
+            aws_access_key_id="f35256ddownload_file_from_s314c2a22f4648bce44896529d8",
             aws_secret_access_key="7672dbe85d3e540b7c62ff6df5704ef3",
             region_name="usc1",
             config=Config(s3={"addressing_style": "path"}),  # important for Contabo

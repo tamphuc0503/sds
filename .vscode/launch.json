@@ -38,7 +38,7 @@
             ],
             "justMyCode": false
         },
-                {
+        {
             "name": "delete_duplicated_sds_file",
             "type": "debugpy",
             "request": "launch",
@@ -46,6 +46,17 @@
             "program": "manage.py",
             "args": [
                 "delete_duplicated_sds_file"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "extract_pdf",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "program": "manage.py",
+            "args": [
+                "extract_pdf"
             ],
             "justMyCode": false
         },

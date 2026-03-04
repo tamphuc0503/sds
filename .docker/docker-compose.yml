@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    container_name: sds_web
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../:/app
+      - ../db.sqlite3:/app/db.sqlite3  # Mount external SQLite database
+      - static_volume:/app/static
+      - media_volume:/app/media
+    env_file:
+      - ../.env
+    environment:
+      - DJANGO_SETTINGS_MODULE=sds.settings
+      - PYTHONUNBUFFERED=1
+    command: python manage.py runserver 0.0.0.0:8000
+    networks:
+      - sds_network
+
+  # Worker service for running management commands
+  worker:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    container_name: sds_worker
+    restart: unless-stopped
+    volumes:
+      - ../:/app
+      - ../db.sqlite3:/app/db.sqlite3  # Mount external SQLite database
+      - static_volume:/app/static
+      - media_volume:/app/media
+    env_file:
+      - ../.env
+    environment:
+      - DJANGO_SETTINGS_MODULE=sds.settings
+      - PYTHONUNBUFFERED=1
+    # This service will wait for commands to be run manually
+    command: tail -f /dev/null
+    networks:
+      - sds_network
+
+volumes:
+  static_volume:
+  media_volume:
+
+networks:
+  sds_network:
+    driver: bridge
